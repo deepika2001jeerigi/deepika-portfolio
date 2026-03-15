@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepika | Portfolio</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#">Deepika</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="home d-flex align-items-center">
+      <div class="container text-center">
+        <img src="img/profile.jpg" class="profile-img" alt="Deepika" />
+        <h1 class="mt-3">Hi, I'm <span class="text-warning">Deepika</span></h1>
+        <h3 class="typing-text"></h3>
+        <a href="#projects" class="btn btn-warning mt-3">View My Work</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="text-center">
+          I am an aspiring Software Developer skilled in Python, Django,
+          JavaScript, SQL, and Web Development. I enjoy creating responsive,
+          user-friendly applications and love solving logical problems using
+          backend technologies.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="row text-center mt-4">
+          <div class="col-md-3 skill-box">HTML</div>
+          <div class="col-md-3 skill-box">CSS</div>
+          <div class="col-md-3 skill-box">JavaScript</div>
+          <div class="col-md-3 skill-box">Bootstrap</div>
+          <div class="col-md-3 skill-box">Python</div>
+          <div class="col-md-3 skill-box">Django</div>
+          <div class="col-md-3 skill-box">MySQL</div>
+          <div class="col-md-3 skill-box">Firebase</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-card">
+          <h4>Weather Application (Django)</h4>
+          <p>Realtime weather app built using Django & APIs.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Login & Registration System</h4>
+          <p>Secure authentication using Firebase & JavaScript.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Responsive Cake Website</h4>
+          <p>Cake shop website built with Bootstrap & custom CSS.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>SQL Database Projects</h4>
+          <p>Practical SQL queries with Joins, Aggregations, Constraints.</p>
+        </div>
+
+        <!-- GitHub Projects -->
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-dark">View My GitHub Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="text-center">
+          <p>Email: <strong>deepika2001jeerigi@gmail.com</strong></p>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form mt-4">
+          <input
+            type="text"
+            class="form-control mb-2"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            class="form-control mb-2"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            class="form-control mb-2"
+            rows="4"
+            placeholder="Message"
+          ></textarea>
+          <button class="btn btn-warning">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-2">
+      © 2026 Deepika — Portfolio
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Typing Animation -->
+    <script>
+      const text = [
+        "Software Developer",
+        "Python Developer",
+        "Django Developer",
+        "Web Developer",
+      ];
+      let i = 0;
+      let j = 0;
+      let current = "";
+      let letter = "";
+
+      (function type() {
+        if (i === text.length) i = 0;
+        current = text[i];
+        letter = current.slice(0, ++j);
+        document.querySelector(".typing-text").textContent = letter;
+        if (letter.length === current.length) {
+          i++;
+          j = 0;
+          setTimeout(type, 1000);
+        } else {
+          setTimeout(type, 120);
+        }
+      })();
+    </script>
+  </body>
+</html>
